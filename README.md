@@ -10,9 +10,17 @@ The Wild Oasis is a single-page application tailored for a small boutique hotel 
 * Dashboard: View detailed statistics and insights into hotel activity, including bookings, sales, check-ins, and occupancy rates over specified time periods.
 
 ## Usage
-* Check-In Guests: Use the application to efficiently check in guests as they arrive at the hotel.
+* Login: Use the provided credentials to log in to the application:
+  * Username: debora@example.com
+  * Password: pass1234
 * Dashboard Insights: Access the dashboard to view statistics and insights into recent hotel activity.
+* Check-In Guests: Use the application to efficiently check in guests as they arrive at the hotel.
 * Filter Statistics: Filter statistics to view data over different time periods, such as the last 7 days, 30 days, or 90 days.
+
+## Dashboard Features
+* Filtering: Filter statistics to view data for the last 7 days, 30 days, or 90 days.
+* Statistics: View statistics on bookings, sales, check-ins, and occupancy rate for the selected time period.
+* Today's Activity: Monitor today's activity, stay duration summary, and a graphical representation of sales from the last few days.
 
 ## Technologies Used
 * React + Vite
