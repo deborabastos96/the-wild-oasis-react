@@ -19,11 +19,12 @@ The Wild Oasis is a single-page application tailored for a small boutique hotel 
 
 ## Dashboard Features
 * Filtering: Filter statistics to view data for the last 7 days, 30 days, or 90 days.
-* Statistics: View statistics on bookings, sales, check-ins, and occupancy rate for the selected time period.
-* Today's Activity: Monitor today's activity, stay duration summary, and a graphical representation of sales from the last few days.
+* Statistics: View statistics on bookings, sales, check-ins, occupancy rate, stay duration summary, and a graphical representation of sales for the selected time period.
+* Today's Activity: Monitor today's activity.
 
 ## Technologies Used
-* React + Vite
+* React
+* Vite
 * Styled Components
 * React Router
 * React Query
