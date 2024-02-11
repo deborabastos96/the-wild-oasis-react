@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { device } from "../utils/constants";
 
 // const test = css`
 //   text-align: center;
@@ -30,9 +31,13 @@ const Heading = styled.h1`
   ${(props) =>
     props.as === "h4" &&
     css`
-      font-size: 3rem;
+      font-size: 2rem;
       font-weight: 600;
       text-align: center;
+
+      @media only screen and ${device.tabPort} {
+        font-size: 3rem;
+      }
     `}
 
   line-height: 1.4;
