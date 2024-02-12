@@ -2,12 +2,18 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import styled from "styled-components";
+import { device } from "../utils/constants";
+import { useState } from "react";
 
 const StyledAppLayout = styled.div`
   display: grid;
-  grid-template-columns: 26rem 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   height: 100vh;
+
+  @media only screen and ${device.tabLand} {
+    grid-template-columns: 26rem 1fr;
+  }
 `;
 
 const Main = styled.main`
@@ -25,10 +31,12 @@ const Container = styled.div`
 `;
 
 function AppLayout() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <StyledAppLayout>
-      <Header />
-      <Sidebar />
+      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <Sidebar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <Main>
         <Container>
           <Outlet />

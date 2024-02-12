@@ -7,13 +7,13 @@ import { device } from "../utils/constants";
 const LoginLayout = styled.main`
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 35rem;
+  grid-template-columns: 32rem;
   align-content: center;
   justify-content: center;
   gap: 3.2rem;
   background-color: var(--color-grey-50);
 
-  @media only screen and ${device.tabPort} {
+  @media only screen and ${device.phone} {
     grid-template-columns: 48rem;
   }
 `;

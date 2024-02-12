@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import HeaderMenu from "./HeaderMenu";
 import UserAvatar from "../features/authentication/UserAvatar";
+import ToggleMenu from "./ToggleMenu";
+import { device } from "../utils/constants";
 
 const StyledHeader = styled.header`
   background-color: var(--color-grey-0);
@@ -10,14 +12,27 @@ const StyledHeader = styled.header`
   display: flex;
   gap: 2.4rem;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+
+  @media only screen and ${device.tabLand} {
+    justify-content: flex-end;
+  }
 `;
 
-function Header() {
+const UserInfo = styled.div`
+  display: flex;
+  gap: 2.4rem;
+  align-items: center;
+`;
+
+function Header({ isMenuOpen, setIsMenuOpen }) {
   return (
     <StyledHeader>
-      <UserAvatar />
-      <HeaderMenu />
+      <ToggleMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <UserInfo>
+        <UserAvatar />
+        <HeaderMenu />
+      </UserInfo>
     </StyledHeader>
   );
 }
