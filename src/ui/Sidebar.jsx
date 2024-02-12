@@ -31,27 +31,9 @@ const StyledSidebar = styled.aside`
   }
 `;
 
-const Overlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-width: 100vw;
-  min-height: 100vh;
-  background: ${({ $isMenuOpen }) =>
-    $isMenuOpen ? "rgb(111, 111, 111, 0.5)" : "rgb(111, 111, 111, 0)"};
-  z-index: 2;
-
-  @media only screen and ${device.tabLand} {
-    width: 0;
-    height: 0;
-    z-index: -1;
-  }
-`;
-
 function Sidebar({ isMenuOpen, setIsMenuOpen }) {
   return (
     <StyledSidebar $isMenuOpen={isMenuOpen}>
-      <Overlay $isMenuOpen={isMenuOpen} />
       <Logo />
       <MainNav setIsMenuOpen={setIsMenuOpen} />
     </StyledSidebar>

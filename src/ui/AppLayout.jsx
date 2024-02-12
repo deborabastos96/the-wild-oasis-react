@@ -30,6 +30,23 @@ const Container = styled.div`
   gap: 3.2rem;
 `;
 
+const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: ${({ $isMenuOpen }) => ($isMenuOpen ? "rgba(0, 0, 0, 0.5)" : "")};
+  z-index: ${({ $isMenuOpen }) => ($isMenuOpen ? 2 : -1)};
+  backdrop-filter: blur(4px);
+
+  @media only screen and ${device.tabLand} {
+    width: 0;
+    height: 0;
+    z-index: -1;
+  }
+`;
+
 function AppLayout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -42,6 +59,7 @@ function AppLayout() {
           <Outlet />
         </Container>
       </Main>
+      <Overlay $isMenuOpen={isMenuOpen} onClick={() => setIsMenuOpen(false)} />
     </StyledAppLayout>
   );
 }
