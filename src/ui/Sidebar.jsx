@@ -3,6 +3,7 @@ import Logo from "./Logo";
 import MainNav from "./MainNav";
 import { device } from "../utils/constants";
 import { useToggleMenu } from "../context/ToggleMenuContext";
+// import Uploader from "../data/Uploader";
 
 const StyledSidebar = styled.aside`
   position: fixed;
@@ -39,6 +40,7 @@ function Sidebar() {
     <StyledSidebar $isMenuOpen={isMenuOpen}>
       <Logo />
       <MainNav />
+      {/* <Uploader /> */}
     </StyledSidebar>
   );
 }
