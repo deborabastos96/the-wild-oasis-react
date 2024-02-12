@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Logo from "./Logo";
 import MainNav from "./MainNav";
 import { device } from "../utils/constants";
+import { useToggleMenu } from "../context/ToggleMenuContext";
 
 const StyledSidebar = styled.aside`
   position: fixed;
@@ -31,11 +32,13 @@ const StyledSidebar = styled.aside`
   }
 `;
 
-function Sidebar({ isMenuOpen, setIsMenuOpen }) {
+function Sidebar() {
+  const { isMenuOpen } = useToggleMenu();
+
   return (
     <StyledSidebar $isMenuOpen={isMenuOpen}>
       <Logo />
-      <MainNav setIsMenuOpen={setIsMenuOpen} />
+      <MainNav />
     </StyledSidebar>
   );
 }

@@ -3,7 +3,7 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 import styled from "styled-components";
 import { device } from "../utils/constants";
-import { useState } from "react";
+import { useToggleMenu } from "../context/ToggleMenuContext";
 
 const StyledAppLayout = styled.div`
   display: grid;
@@ -48,18 +48,18 @@ const Overlay = styled.div`
 `;
 
 function AppLayout() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isMenuOpen, closeMenu } = useToggleMenu();
 
   return (
     <StyledAppLayout>
-      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      <Sidebar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <Header />
+      <Sidebar />
       <Main>
         <Container>
           <Outlet />
         </Container>
       </Main>
-      <Overlay $isMenuOpen={isMenuOpen} onClick={() => setIsMenuOpen(false)} />
+      <Overlay $isMenuOpen={isMenuOpen} onClick={closeMenu} />
     </StyledAppLayout>
   );
 }

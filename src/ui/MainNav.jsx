@@ -7,6 +7,7 @@ import {
   HiOutlineHomeModern,
   HiOutlineUsers,
 } from "react-icons/hi2";
+import { useToggleMenu } from "../context/ToggleMenuContext";
 
 const NavList = styled.ul`
   display: flex;
@@ -53,40 +54,38 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-function MainNav({ setIsMenuOpen }) {
-  function handleClick() {
-    setIsMenuOpen(false);
-  }
+function MainNav() {
+  const { closeMenu } = useToggleMenu();
 
   return (
     <nav>
       <NavList>
         <li>
-          <StyledNavLink onClick={handleClick} to="/dashboard">
+          <StyledNavLink onClick={closeMenu} to="/dashboard">
             <HiOutlineHome />
             <span>Home</span>
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink onClick={handleClick} to="/bookings">
+          <StyledNavLink onClick={closeMenu} to="/bookings">
             <HiOutlineCalendarDays />
             <span>Bookings</span>
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink onClick={handleClick} to="/cabins">
+          <StyledNavLink onClick={closeMenu} to="/cabins">
             <HiOutlineHomeModern />
             <span>Cabins</span>
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink onClick={handleClick} to="/users">
+          <StyledNavLink onClick={closeMenu} to="/users">
             <HiOutlineUsers />
             <span>Users</span>
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink onClick={handleClick} to="/settings">
+          <StyledNavLink onClick={closeMenu} to="/settings">
             <HiOutlineCog6Tooth />
             <span>Settings</span>
           </StyledNavLink>

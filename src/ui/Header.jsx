@@ -25,10 +25,10 @@ const UserInfo = styled.div`
   align-items: center;
 `;
 
-function Header({ isMenuOpen, setIsMenuOpen }) {
+function Header() {
   return (
     <StyledHeader>
-      <ToggleMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <ToggleMenu />
       <UserInfo>
         <UserAvatar />
         <HeaderMenu />

@@ -1,6 +1,7 @@
 import { HiBars3, HiMiniXMark } from "react-icons/hi2";
 import styled from "styled-components";
 import { device } from "../utils/constants";
+import { useToggleMenu } from "../context/ToggleMenuContext";
 
 const StyledToggle = styled.div`
   font-size: 0;
@@ -29,9 +30,11 @@ const StyledToggle = styled.div`
   }
 `;
 
-function ToggleMenu({ isMenuOpen, setIsMenuOpen }) {
+function ToggleMenu() {
+  const { isMenuOpen, toggleMenu } = useToggleMenu();
+
   return (
-    <StyledToggle onClick={() => setIsMenuOpen(!isMenuOpen)}>
+    <StyledToggle onClick={toggleMenu}>
       {isMenuOpen ? <HiMiniXMark /> : <HiBars3 />}
     </StyledToggle>
   );
